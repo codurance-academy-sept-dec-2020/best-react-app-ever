@@ -1,17 +1,29 @@
-$light-aubergine: rgb(75, 32, 56);
+$c_primary: rgb(170, 170, 57);
+$c_secondary: rgb(170, 107, 57);
+$c_tertiary: rgb(35, 100, 103);
+$c_quaternary: rgb(75, 32, 56);
+
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding-top: 45px;
   text-align: center;
   width: 75%;
   margin: 0 auto;
-  border-left: 5px solid $light-aubergine;
-  border-right: 5px solid $light-aubergine;
-  cursor: pointer;
+  border-left: 5px solid $c_quaternary;
+  border-right: 5px solid $c_quaternary;
+
+  &__logo--container {
+    cursor: pointer;
+  }
+
   &__logo {
     height: 120px;
     pointer-events: none;
-    animation: image-spin infinite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    //animation: image-spin infinite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    animation: image-spin infinite 2s linear;
     &--clockwise {
       animation-direction: normal;
     }
@@ -32,6 +44,39 @@ $light-aubergine: rgb(75, 32, 56);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.header__controller {
+  width: 100%;
+  content: "";
+  cursor: pointer;
+
+  &--container {
+    display: grid;
+    grid-template-columns: 25px;
+    grid-template-rows: 25px 25px 25px 25px;
+  }
+
+  &:hover {
+    width: 160%;
+    transition: width 0.1s ease-in-out;
+  }
+
+  &--primary {
+    background-color: $c_primary;
+  }
+
+  &--secondary {
+    background-color: $c_secondary;
+  }
+
+  &--tertiary {
+    background-color: $c_tertiary;
+  }
+
+  &--quaternary {
+    background-color: $c_quaternary;
   }
 }
 

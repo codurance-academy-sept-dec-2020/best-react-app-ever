@@ -26,7 +26,15 @@ function Header() {
 
     return <React.Fragment>
         <header className="header">
-            <div onClick={toggleanimationStyle}>
+
+            <div className="header__controller--container">
+                <div className="header__controller header__controller--primary"></div>
+                <div className="header__controller header__controller--secondary"></div>
+                <div className="header__controller header__controller--tertiary"></div>
+                <div className="header__controller header__controller--quaternary"></div>
+            </div>
+
+            <div className="header__logo--container" onClick={toggleanimationStyle}>
                 <img
                     src={logo}
                     className={`header__logo ${applyAnimation()}`}
