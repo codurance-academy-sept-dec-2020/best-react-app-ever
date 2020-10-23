@@ -7,10 +7,17 @@ $light-aubergine: rgb(75, 32, 56);
   margin: 0 auto;
   border-left: 5px solid $light-aubergine;
   border-right: 5px solid $light-aubergine;
+  cursor: pointer;
   &__logo {
     height: 120px;
     pointer-events: none;
     animation: image-spin infinite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    & .rt{
+    }
+
+    &.lt {
+      animation-direction: reverse;
+    }
   }
 }
 
