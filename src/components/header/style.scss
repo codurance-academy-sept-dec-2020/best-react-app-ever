@@ -17,13 +17,16 @@ $c_quaternary: rgb(75, 32, 56);
 
   &__logo--container {
     cursor: pointer;
+    height: 120px;
+    width: 120px;
   }
 
   &__logo {
-    height: 120px;
-    pointer-events: none;
-    //animation: image-spin infinite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
     animation: image-spin infinite 2s linear;
+    pointer-events: none;
+
+    //animation: image-spin infinite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    //animation: image-spin infinite 2s linear;
     &--clockwise {
       animation-direction: normal;
     }

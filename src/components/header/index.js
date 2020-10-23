@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-import logo from "../../assets/icons/logo.svg";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import "./style.scss";
 
 function Header() {
 
-    let[animationStyle, setAnimationStyle] = useState(1);
+    const[animationStyle, setAnimationStyle] = useState(1);
+    const[palleteColour, setPalleteColour] = useState(null);
+
+    const selectColour = (paletteItem) => {
+        const selectedColour = window.getComputedStyle(paletteItem).getPropertyValue("background-color");
+        setPalleteColour(selectedColour);
+    };
 
     const toggleanimationStyle = () => {
-        animationStyle += 1;
+        setAnimationStyle(animationStyle + 1);
         if (animationStyle > 3) {
-            animationStyle = 1;
+            setAnimationStyle(1);
         }
-        setAnimationStyle(animationStyle);
     };
 
     const applyAnimation = () => {
@@ -28,16 +33,20 @@ function Header() {
         <header className="header">
 
             <div className="header__controller--container">
-                <div className="header__controller header__controller--primary"></div>
-                <div className="header__controller header__controller--secondary"></div>
-                <div className="header__controller header__controller--tertiary"></div>
-                <div className="header__controller header__controller--quaternary"></div>
+                <div onClick={(event)=>selectColour(event.target)} className="header__controller header__controller--primary"></div>
+                <div onClick={(event)=>selectColour(event.target)} className="header__controller header__controller--secondary"></div>
+                <div onClick={(event)=>selectColour(event.target)} className="header__controller header__controller--tertiary"></div>
+                <div onClick={(event)=>selectColour(event.target)} className="header__controller header__controller--quaternary"></div>
             </div>
 
             <div className="header__logo--container" onClick={toggleanimationStyle}>
-                <img
-                    src={logo}
+                < Logo
                     className={`header__logo ${applyAnimation()}`}
+                    fill={palleteColour}
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
                 />
             </div>
         </header>
