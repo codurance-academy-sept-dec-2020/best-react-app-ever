@@ -17,6 +17,7 @@ $c_quaternary: rgb(75, 32, 56);
     cursor: pointer;
     height: 120px;
     width: 120px;
+    background-color: white;
   }
 
   &__logo {
@@ -35,6 +36,10 @@ $c_quaternary: rgb(75, 32, 56);
 
     &--bothwise {
       animation-direction: alternate;
+    }
+
+    &--nonwise {
+      animation: none;
     }
   }
 }

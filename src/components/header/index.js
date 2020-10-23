@@ -22,8 +22,10 @@ function Header() {
 
   const applyAnimation = () => {
     if (animationStyle === 1) {
-      return "header__logo--clockwise";
+        return "header__logo--nonwise";
     } else if (animationStyle === 2) {
+      return "header__logo--clockwise";
+    } else if (animationStyle === 3) {
       return "header__logo--coutnerclockwise";
     } else {
       return "header__logo--bothwise";
