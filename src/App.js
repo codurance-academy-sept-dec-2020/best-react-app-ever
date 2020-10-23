@@ -1,11 +1,22 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom/";
 import './App.css';
-import Header from './components/header/index';
+import CoolVideo from "./pages/CoolVideo/CoolVideo";
+import Landing from "./pages/landing/landing";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+        <Router>
+            <Switch>
+                <Route path="/cool-video">
+                    <CoolVideo />
+                </Route>
+                <Route path="/">
+                    <Landing />
+                </Route>
+            </Switch>
+        </Router>
     </div>
   );
 }
