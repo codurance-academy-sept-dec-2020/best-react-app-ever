@@ -1,0 +1,25 @@
+@import "../header/style.scss";
+
+.nav-bar {
+  display: flex;
+  list-style: none;
+  padding: 2% 5%;
+  justify-content: flex-end;
+  background-color: aquamarine;
+}
+
+.nav-bar__item {
+  padding: 0 30px;
+}
+
+.nav-bar__item > a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $c_quaternary;
+  padding-bottom: 10px;
+}
+
+.selected {
+  border-bottom: solid thick;
+}
