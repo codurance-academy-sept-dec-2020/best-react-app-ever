@@ -5,7 +5,14 @@
   list-style: none;
   padding: 2% 5%;
   justify-content: flex-end;
-  background-color: aquamarine;
+  //background-color: aquamarine;
+  background-image: linear-gradient(to right, $c_primary, $c_secondary, $c_tertiary, $c_quaternary);
+
+  & li {
+    padding: 10px 15px;
+    background-color: white;
+    margin-left: 15px;
+  }
 }
 
 .nav-bar__item {
@@ -21,5 +28,5 @@
 }
 
 .selected {
-  border-bottom: solid thick;
+  border-bottom: solid white 3px;
 }
