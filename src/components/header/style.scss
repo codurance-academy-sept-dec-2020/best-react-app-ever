@@ -12,11 +12,16 @@ $light-aubergine: rgb(75, 32, 56);
     height: 120px;
     pointer-events: none;
     animation: image-spin infinite 2s cubic-bezier(0.22, 0.61, 0.36, 1);
-    & .rt{
+    &--clockwise {
+      animation-direction: normal;
     }
 
-    &.lt {
+    &--coutnerclockwise {
       animation-direction: reverse;
+    }
+
+    &--bothwise {
+      animation-direction: alternate;
     }
   }
 }

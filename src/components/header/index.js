@@ -4,19 +4,32 @@ import "./style.scss";
 
 function Header() {
 
-    const[isActive, setActive] = useState(false);
+    let[animationStyle, setAnimationStyle] = useState(1);
 
-    const toggleActivity = () => {
-        console.log("ho");
-        setActive(!isActive);
+    const toggleanimationStyle = () => {
+        animationStyle += 1;
+        if (animationStyle > 3) {
+            animationStyle = 1;
+        }
+        setAnimationStyle(animationStyle);
+    };
+
+    const applyAnimation = () => {
+        if (animationStyle == 1) {
+            return "header__logo--clockwise";
+        } else if (animationStyle == 2) {
+            return "header__logo--coutnerclockwise";
+        } else {
+            return "header__logo--bothwise";
+        }
     };
 
     return <React.Fragment>
         <header className="header">
-            <div onClick={toggleActivity}>
+            <div onClick={toggleanimationStyle}>
                 <img
                     src={logo}
-                    className={isActive ? "header__logo rt" : "header__logo lt"} alt="logo"
+                    className={`header__logo ${applyAnimation()}`}
                 />
             </div>
         </header>
